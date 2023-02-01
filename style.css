@@ -1,72 +1,160 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-*{
+*::after,::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
-
 body{
+margin: 0 100px;
+background-color: #f0f0f06c;
+}
+
+/* -------------MENUE---------*/
+.nav{
+    width: 100;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #343f4f;
+    padding: 30px 0;
 }
 
-.Wrapper{
-    display: inline-flex;
+.nav  .logo h1{
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #000000;
 }
 
-.Wrapper .static-txt{
-    color: #fff;
+.nav .logo b{
+    color: #ff511c;
+}
+.nav ul{
+    display: flex;
+    list-style: none;
+}
+.nav ul li{
+    margin-right: 30px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    font-family: sans-serif;
+    font-size: 17px;
+    
+}
+
+
+
+/*----------------Active-----*/
+
+.nav ul .active::after{
+    content: '';
+    width: 50;
+    height: 3px;
+    background-color: #ff511c;
+    display: flex;
+    position: relative;
+    margin-left:2px ;
+
+}
+/*----------------Input----------*/
+
+input{
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.Signin{
+    background: transparent;
+    border: none;
+}
+
+.Signup{
+    background-color: #ff511c;
+    color: #ffffff;
+    outline: none;
+    border: none;
+    border-radius: 10px; 
+}
+/*----------content--------*/
+
+.content{
+    display: grid;
+    grid-template-columns: 50% auto;
+    gap: 30px;
+    margin-top: 120px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+/* #Content TEXT*/
+/*----------LEFT - SIDE------*/
+
+.content .content-left{
+    display: block;
+    width: 100%;
+}
+
+.content .content .info{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .content-left .info h2{
     font-size: 60px;
-    font-weight: 400;
+    font-family: sans-serif;
+    margin-bottom: 30px;
 }
 
-.Wrapper .dynamic-txts{
-margin-left: 15px; 
-height: 90px;
-line-height: 90px; 
-overflow: hidden;
+.content .content-left .info p{
+
+font-size: 23px;
+line-height: 30px;
+margin-bottom: 30px;
+font-family: sans-serif;
 }
 
-.dynamic-txts li{
-  color: #fc6d6d;
-  list-style: none;
-  font-size:60px ;
-  font-weight: 500;
-  
-  position: relative;
-  top: 0;
-  animation: slide 6s steps(4) infinite;
+
+/* #Content*/
+/*----------BUTTON------*/
+
+.content .content-left button{
+    padding: 10px 23px;
+    background-color: #ff511c;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
-@keyframes slide {
+
+/* #Content image*/
+/*----------Right - SIDE------*/
+
+.content .content-right{
+    display: block;
+    width: 100%;
+}
+
+.content .content-right img{
+    width: 400px;
+    height: auto;
+    position: relative;
+    user-select: none;
+    animation: rotate 10s linear infinite;
+}
+
+/* #Content */
+/*----------Animation------*/
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
     100%{
-       top: -360px;
-    } 
-}
-
-.dynamic-txts li span{
-position: relative;
-
-
-}
-.dynamic-txts li span::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 100%; 
-  width: 100%;
-  background: #343f4f;
-  border-left: 2px solid #fc6d6d;
-  animation: typing 1.5s steps(10) infinite;
-}
-
-@keyframes typing {
-    100%{
-        left: 150%;
-        margin: 0 -35px 0 -35px;
-    } 
+        transform: rotate(360deg);
+    }   
 }
